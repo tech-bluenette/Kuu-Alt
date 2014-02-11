@@ -1,0 +1,15 @@
+Start by generating the model representing the focus of our app:  Emails?
+
+rails g model sender recipent message time_to_send:datetime
+
+rake db:migrate
+
+2.  user/index should show all messages
+	user/show should show one message
+	user/new/create should work together to let the user add a movie
+	edit/update should work together to let the user edit an unsent message
+	destroy should cancel an unsent message
+
+rails g controller users index show new edit
+
+refactor the routes

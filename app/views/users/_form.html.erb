@@ -1,0 +1,48 @@
+<h1>Sign up</h1>
+<%= form_for @user do |f| %>
+
+	<% if @user.errors.any? %>
+    <div class="errors">
+      <%= pluralize(@user.errors.count, "error") %> prevented this user from being created:
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="error_message"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 	
+
+  <div class="form">
+  	<div>
+  		<%= f.label "first_name" %><br>
+  		<%= f.text_field "first_name" %>
+  	</div>
+  	<div>
+  	  <%= f.label "last_name" %><br>
+  	  <%= f.text_field "last_name" %>
+  	</div>
+  	<div>
+  	  <%= f.label "email" %><br>
+  	  <%= f.email_field "email" %>
+  	</div>
+  	<div>
+  	  <%= f.label "phone_number" %><br>
+  	  <%= f.text_field "phone_number" %>
+  	</div>
+  	<div>
+  	  <%= f.label "password" %><br>
+  	  <%= f.password_field "password" %>
+  	</div>
+  	<div>
+  	  <%= f.label "password_confirmation" %><br>
+  	  <%= f.password_field "password_confirmation" %>
+  	</div>
+  	<div>
+  	  <%= f.submit "Submit", class: "btn btn-info dropdown-toggle btn-large" %> 
+  	</div>
+  </div>
+<% end %>
+
+
+

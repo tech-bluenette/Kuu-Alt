@@ -1,0 +1,17 @@
+<% @user.messages.each do |message| %>
+
+		<br>
+	  <p> Message ID: <%= message.id %></p>
+	  <p> Message User ID: <%= message.user_id %></p>
+	  <br>
+	  <h4> Send Time:  <%= message.send_time %></h4>  
+	  <h4> Subject: <%= message.subject %></h4>
+	  <h4> Sent to: <%= message.recipient %></h4>
+	  <h4> Message Text:  <%= message.text %></h4>
+	  <br>
+	  <p id="edit_button"><%= link_to "edit", edit_user_message_path(current_user, message)%>  <%= link_to "delete", user_message_path(current_user, message), method: :delete, confirm: "Are you sure you want to delete this message?" %></p>
+	  <hr>
+
+  
+<% end %>
+

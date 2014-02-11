@@ -1,0 +1,38 @@
+<div class="row birds_green2">
+  <div class="span6 offset2">
+    <h1>Edit your message</h1>
+
+    <%= form_for @message, url: user_message_path(current_user, @message) do |f| %>
+     <div class="form">     
+      <div>    
+        <%= f.label "recipient" %><br>
+        <%= f.text_field "recipient" %>
+      </div>
+       <div>
+        <%= f.label "recipient_email" %><br>
+        <%= f.text_field "recipient_email" %>
+      </div>
+      <div>
+        <%= f.label "subject" %><br>
+        <%= f.text_field "subject" %>
+      </div>
+      <div>
+        <%= f.label "recipient_phone_number" %><br>
+        <%= f.telephone_field "recipient_phone_number" %>
+      </div>
+      <div>
+        <%= f.label "send_time" %><br>
+        <%= f.datetime_select "send_time" %>
+      </div>
+      <div>
+        <%= f.label "text" %><br>
+        <%= f.text_area "text" %>
+      </div>
+      <div>
+        <%= f.submit "Submit", class: "btn btn-success dropdown-toggle btn-large" %> 
+      </div>
+    <% end %>
+    </div>
+
+  </div>
+</div>

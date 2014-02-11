@@ -1,0 +1,74 @@
+<div class="row welcome">
+  <h1 class="offset1" id="hello">hello <%= @user.first_name %> and welcome to Kuu</h1>
+</div>
+
+<div class="row birds">
+  <div class="offset1">
+    <h2>Send a message</h2>
+    <h4 id="fill">by filling in the form below:</h4>
+    <%= form_for @message, url: user_messages_path(@user) do |f| %>
+      <% if @message.errors.any? %>
+        <div>
+         <%= pluralize(@message.errors.count, "error") %> prevented this message from being sent:
+          <ul>
+            <% @message.errors.full_messages.each do |msg| %>
+             <li class="error_message"><%= msg %></li>
+            <% end %>
+          </ul>
+       </div>
+    <% end %>
+
+    <div class="form span7">
+        <div>    
+          <%= f.label "recipient" %><br>
+          <%= f.text_field "recipient" %>
+        </div>
+         <div>
+          <%= f.label "recipient_email" %><br>
+          <%= f.text_field "recipient_email" %>
+        </div>
+        <div>
+          <%= f.label "subject" %><br>
+          <%= f.text_field "subject" %>
+        </div>
+        <div>
+          <%= f.label "recipient_phone_number" %><br>
+          <%= f.telephone_field "recipient_phone_number" %>
+        </div>
+        <div>
+          <%= f.label "text" %><br>
+          <%= f.text_area "text" %>
+        </div>
+        <br>       
+          <div id="current_time">
+            <p> The current Pacific Standard Time is: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %> </p>
+          </div>
+        <br>
+        <div>
+          <%= f.label "send_time" %><br>
+          <%= f.datetime_select "send_time" %>
+        </div>
+        <div>
+          <%= f.submit "Submit", class: "btn btn-success dropdown-toggle btn-large" %> 
+        </div>
+      <% end %>
+      </div>
+      <div class="span5 list">
+
+        <% if @user.messages.count == 0 %>
+          <h3>you have not yet sent any messages using Kuu </h3>
+        <% elsif @user.messages.count == 1 %>
+          <h3>you have sent a single message using Kuu </h3>
+          <% else %>
+          <h3>you have sent <%= @user.messages.count%> messages using <div id="Kuu">Kuu </div></h3>
+        <% end %>
+
+        <%= render 'messages/list_of_messages' %>
+      </div>
+    
+  </div>
+</div>
+
+<div class="row footer">
+    
+</div>

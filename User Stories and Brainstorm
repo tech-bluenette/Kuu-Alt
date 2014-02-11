@@ -1,0 +1,31 @@
+Time delayed messages (SMS) 
+
+User		Recipent		Admin
+
+Static page.  Coming soon, heartfelt handwritten letters
+
+
+User
+	1.	As a user, I can sign in/up for the service
+	2.  As a user, I can sign up for a timeframe and frequency
+	3.  As a user, I can nominate the recipent
+	4.	As a user, I can choose the nature of the relationship
+	5.  As a user, choose to write my own messages
+	6.  As a user, I can choose from a pre-selected theme of messages
+	7.	As a user, I can view a list of previous recipents and messages
+	8.	As a user, I get a copy of the sent message/confirmation through SMS
+
+	- potentially, as a user I can make packages
+	- potentially, as a user I can make my packages available to other users
+
+Recipent 
+	1.	As a recipent, messages I get appear to be from the user
+	2.  As a recipent, I have a "ghost" account of messages associated with me... but I cannot view this
+
+Admin
+	1.  As an admin, I can log into the admin portal using a password
+	2.  As an admin, I can view all users and their nominated recipents
+	3.	As an admin, I can edit/curate the pre-selected themes
+	4.	As an admin, I can see the status of messages, sent/or on hold
+	5.	As an admin, I can set costs ($.10 per text)
+	6.  As an admin, I can delete users
